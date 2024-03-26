@@ -90,8 +90,7 @@ const Authentication: React.FC = () => {
         });
     } else {
       signInWithEmailAndPassword(auth, emailValue, passwordValue)
-        .then((userCredential) => {
-          const user = userCredential.user;
+        .then(() => {
           setLoading(false);
         })
         .catch((error) => {
