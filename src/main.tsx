@@ -1,19 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import App from "./App";
+import { Provider } from "react-redux";
+import appStore from "utils/appStore";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/"></Route>)
-);
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById("root")! as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Provider store={appStore}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
